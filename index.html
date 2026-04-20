@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SalahTracker Legal</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      background: linear-gradient(180deg, #0f172a, #020617);
+      color: #e5e7eb;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .tabs {
+      display: flex;
+      background: rgba(255,255,255,0.05);
+      border-radius: 10px;
+      padding: 4px;
+      margin-bottom: 16px;
+    }
+
+    .tab {
+      flex: 1;
+      padding: 10px;
+      text-align: center;
+      cursor: pointer;
+      border-radius: 8px;
+      font-weight: 600;
+      color: #9ca3af;
+    }
+
+    .tab.active {
+      background: #3b82f6;
+      color: white;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.05);
+      padding: 20px;
+      border-radius: 14px;
+      line-height: 1.6;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    h2 {
+      margin-top: 20px;
+      color: #ffffff;
+    }
+
+    p {
+      color: #d1d5db;
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 12px;
+      color: #9ca3af;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>SalahTracker Legal</h1>
+
+    <div class="tabs">
+      <div class="tab active" onclick="showTab('privacy')">Privacy Policy</div>
+      <div class="tab" onclick="showTab('terms')">Terms of Service</div>
+    </div>
+
+    <div class="card" id="content"></div>
+
+    <div class="footer">
+      Contact: jumairahmad@example.com
+    </div>
+  </div>
+
+  <script>
+    const privacy = `
+      <h2>Privacy Policy</h2>
+      <p><strong>Last Updated:</strong> April 20, 2026</p>
+
+      <p>Jumair Ahmad operates SalahTracker: App Blocker.</p>
+
+      <h2>Information Collection</h2>
+      <p>This app functions primarily on your device.</p>
+
+      <h3>Location Data</h3>
+      <p>Used only to calculate prayer times. Not stored or shared.</p>
+
+      <h3>Usage Data</h3>
+      <p>Used to detect foreground apps for blocking. Not stored or transmitted.</p>
+
+      <h3>Personal Info</h3>
+      <p>Any entered name stays on your device.</p>
+
+      <h2>Permissions</h2>
+      <p>Notifications, Exact Alarm, Overlay, and Usage Stats are required for core features.</p>
+
+      <h2>Accessibility Service</h2>
+      <p>This app uses Accessibility Service solely to block apps during prayer times. No personal or sensitive data is collected or shared.</p>
+
+      <h2>Data Security</h2>
+      <p>We follow standard practices to protect your data.</p>
+    `;
+
+    const terms = `
+      <h2>Terms of Service</h2>
+      <p><strong>Last Updated:</strong> April 20, 2026</p>
+
+      <h2>Use License</h2>
+      <p>App is for personal, non-commercial use only.</p>
+
+      <h2>Prayer Accuracy</h2>
+      <p>Prayer times are calculated and may vary slightly. Verify with local mosque if needed.</p>
+
+      <h2>App Blocking</h2>
+      <p>The app blocks apps using system permissions. We are not responsible for missed notifications.</p>
+
+      <h2>Liability</h2>
+      <p>We are not liable for damages from app use.</p>
+
+      <h2>Changes</h2>
+      <p>Terms may be updated anytime.</p>
+    `;
+
+    function showTab(tab) {
+      const tabs = document.querySelectorAll('.tab');
+      tabs.forEach(t => t.classList.remove('active'));
+
+      if (tab === 'privacy') {
+        document.getElementById('content').innerHTML = privacy;
+        tabs[0].classList.add('active');
+      } else {
+        document.getElementById('content').innerHTML = terms;
+        tabs[1].classList.add('active');
+      }
+    }
+
+    // default load
+    document.getElementById('content').innerHTML = privacy;
+  </script>
+</body>
+</html>
